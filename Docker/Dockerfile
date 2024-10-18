@@ -1,13 +1,12 @@
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:11-jre-slim
+FROM openjdk:11-jdk-slim
 
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR /docker_app
 
-# Copy the compiled JAR file or source files into the container
-COPY . /app
+# Copy the entire APP folder into the container
+COPY ../app/*.java /docker_app/
 
-# Run and Comp  Main
+# Compile the project
 RUN javac Chomp.java
 
 # Define the entry point for running the project
