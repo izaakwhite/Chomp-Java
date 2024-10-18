@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  chomp-game:
+    build: .
+    container_name: chomp-game-container
+    ports:
+      - "8080:8080"  # Expose port if your game uses a web interface or networking
+    volumes:
+      - .:/app  # Mount the current directory to the /app directory inside the container
+    command: ["java", "Chomp"]  # Command to run your game
