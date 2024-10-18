@@ -9,5 +9,6 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ../app:/docker_app  # Optional: Mount the APP folder if needed
+      - ../app:/docker_app  
+      - /tmp/.X11-unix:/tmp/.X11-unix
     command: ["java", "Chomp"]
