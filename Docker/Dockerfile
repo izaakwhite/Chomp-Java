@@ -12,7 +12,7 @@ WORKDIR /docker_app
 COPY ../app/*.java /docker_app/
 
 # Compile the project
-RUN javac Chomp.java
+RUN javac *.java
 
-# Define the entry point for running the project
-CMD ["sh", "-c", "xvfb-run x11vnc -display :0 -forever -usepw & java Chomp"]
+# Run The Project
+CMD ["java", "-cp", ".", "Chomp"]

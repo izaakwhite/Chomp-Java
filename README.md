@@ -17,9 +17,17 @@ sudo apt install openjdk-11-jdk
 sudo apt install libxrender1 libxtst6 libxi6
 # if Java Env Is all set
 cd ~/Chomp-Java/app
+javac *.java
 java -cp . Chomp
 ```
 
 ### Windows
 
 Just Make Sure JDK is installed, make './app' a java project, run the java project
+
+### Docker
+
+```bash
+xhost +local:docker # sudo apt install x11-xserver-utils if not have
+docker run -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix <image_name_or_id>
+```

@@ -34,4 +34,10 @@ public class ChompGame extends CharMatrix
     board.setDisplayCount(0);
     board.update(this);
   }
+   public void reset() 
+   {
+        fillRect(0, 0, numRows() - 1, numCols() - 1, 'x'); // Fill the whole board with 'x'
+        board.setDisplayCount(0); // Reset any display counts
+        board.update(this); // Update the board display
+   }
 }

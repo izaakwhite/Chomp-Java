@@ -11,4 +11,5 @@ services:
     volumes:
       - ../app:/docker_app  
       - /tmp/.X11-unix:/tmp/.X11-unix
-    command: ["java", "Chomp"]
+    environment:
+      - DISPLAY=${DISPLAY}
